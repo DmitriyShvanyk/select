@@ -3,14 +3,14 @@ import '../pages/index.css'
 // select
 import '../blocks/select/select.css'
 import Select from '../blocks/select/select.js'
-import seletJson from '../blocks/select/select.json'
+
 
 window.addEventListener('DOMContentLoaded', () => {
 
   const select = new Select({
     selector: '.select',
     label: 'Selected technolodgy',
-    url: 'https://soledar10.com.ua/assets/templates/layout/select/select.json'
+    url: '../select.json'
   });
 
   // console.log(select)

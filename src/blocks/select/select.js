@@ -10,12 +10,12 @@ export default class Select {
     // bind
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
-    //this.closeOutside = this.closeOutside.bind(this);
+    this.closeOutside = this.closeOutside.bind(this);
     this.onClick = this.onClick.bind(this);
 
     const selectLabel = this.container.querySelector('.select__label');
     selectLabel.addEventListener('click', () => selectLabel.classList.contains('select__label--active') ? this.close() : this.open());
-    //document.addEventListener('click', this.closeOutside);
+    document.addEventListener('click', this.closeOutside);
   }
 
   // method render
@@ -32,7 +32,11 @@ export default class Select {
     selectLabel.dataset.index = 0;
     selectDropdown.classList.add('select__dropdown');
 
-    fetch(this.url, { mode: 'no-cors' }).then((resolve) => {
+    fetch(this.url, {
+      method: 'GET',
+      mode: 'no-cors',
+      credentials: 'include'
+    }).then((resolve) => {
       return resolve.json();
     }).then(data => {
 
@@ -51,9 +55,8 @@ export default class Select {
         selectDropdown.appendChild(selectDropdownItem);
       }
 
-      Array.from(this.container.querySelectorAll('.select__dropdown-item')).map(item => {
-        item.addEventListener('click', this.onClick);
-      });
+      const selectDropdownItem = this.container.querySelectorAll('.select__dropdown-item');
+      Array.from(selectDropdownItem).map(item => item.addEventListener('click', this.onClick));
 
     }).catch(error => {
       return Promise.reject(`Ошибка: ${error.status}`);
@@ -91,7 +94,7 @@ export default class Select {
 
   // method close select click outside
   closeOutside(e) {
-    if (!this.container.contains(e.target)) {
+    if (!this.container.contains(e.target) && !e.target.classList.contains('btn--open')) {
       this.close();
     }
   }

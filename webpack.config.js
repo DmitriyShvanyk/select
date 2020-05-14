@@ -83,6 +83,16 @@ module.exports = {
             name: './fonts/[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.json$/,
+        loader: 'file-loader',
+        type: 'javascript/auto',
+        options: {
+          name() {
+            return '[name].[ext]';
+          },
+        },
       }
 
     ]
