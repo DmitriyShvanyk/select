@@ -3,14 +3,14 @@ import '../pages/index.css'
 // select
 import '../blocks/select/select.css'
 import Select from '../blocks/select/select.js'
-
+import selectJson from '../select.json'
 
 window.addEventListener('DOMContentLoaded', () => {
 
   const select = new Select({
     selector: '.select',
     label: 'Selected technolodgy',
-    url: '../select.json'
+    url: selectJson
   });
 
   // console.log(select)

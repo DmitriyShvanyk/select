@@ -90,7 +90,7 @@ module.exports = {
         type: 'javascript/auto',
         options: {
           name() {
-            return '[name].[ext]';
+            return '[name].[ext]'
           },
         },
       }
