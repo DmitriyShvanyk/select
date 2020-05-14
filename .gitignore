@@ -1,0 +1,15 @@
+// Файлы ОС
+DS_Store
+Thumbs.db
+
+// Файлы редакторов
+.idea
+.sublime
+.vscode
+
+// Файлы инструментов
+.log
+node_modules/
+
+// Билд
+dist/

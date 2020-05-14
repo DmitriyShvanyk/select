@@ -1,0 +1,6 @@
+.select__control {
+  height: 40px;
+  width: 100%;
+  padding: .75em 1em;
+  outline: none;
+}

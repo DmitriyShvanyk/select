@@ -1,0 +1,16 @@
+@import url(../select/__control/select__control.css);
+@import url(../select/__label/select__label.css);
+@import url(../select/__dropdown/select__dropdown.css);
+@import url(../select/__dropdown-item/select__dropdown-item.css);
+@import url(../select/__preloader/select__preloader.css);
+@import url(../select/__action/select__action.css);
+
+
+.select {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  min-width: 240px;
+  margin-bottom: 1em;
+  position: relative;
+}

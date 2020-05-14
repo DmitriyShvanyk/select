@@ -1,0 +1,11 @@
+.section__columns {
+  display: flex;
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+@media (max-width:767px) {
+  .section__columns {
+    display: block;
+  }
+}
